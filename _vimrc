@@ -29,8 +29,8 @@ function MyDiff()
 endfunction
 
 " Set the colour scheme
-" let moria_style = 'desert' 
-colo desert 
+let moria_style = 'dark' 
+colo moria
 
 " Set font (gvim)
 if has('gui_running')

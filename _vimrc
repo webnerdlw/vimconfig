@@ -42,8 +42,9 @@ endif
 :set guioptions-=T  "remove toolbar
 :set guioptions-=r  "remove right-hand scroll bar
 
-" Show line numbers
+" Visual Changes
 :set number
+:set cpoptions+=$
 
 " Set Tabbing
 :set smartindent

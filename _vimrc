@@ -9,7 +9,7 @@ colorscheme molokai
 
 " Set font (gvim)
 if has('gui_running')
-  set guifont=Courier_New:h9:cANSI
+  set guifont=Droid_Sans_Mono:h9:cANSI
 endif
 
 " Hide toolbars (gvim)
@@ -35,4 +35,8 @@ endif
 augroup mkd
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
 augroup END
+
+" Backup those backup files somewhere else
+set backupdir=~/.vim/tmp/
+set directory=~/.vim/tmp
 

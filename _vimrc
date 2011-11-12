@@ -9,7 +9,7 @@ colorscheme molokai
 
 " Set font (gvim)
 if has('gui_running')
-  set guifont=Droid_Sans_Mono:h9:cANSI
+  set guifont=Droid_Sans_Mono:h8:cANSI
 endif
 
 " Hide toolbars (gvim)
@@ -19,6 +19,10 @@ endif
 
 " Stop breaks in the middle of words
 :set linebreak
+
+" For easier comment writing
+set colorcolumn=80
+set textwidth=80
 
 " Visual Changes
 :set number
@@ -39,8 +43,12 @@ set grepprg=grep\ -nH\ $*
 
 " Use english for spellchecking, but don't spellcheck by default
 if version >= 700
-   set spl=en spell
-   set nospell
+    " Toggle spell checking on and off with `,s`
+    let mapleader = ","
+    nmap <silent> <leader>s :set spell!<CR>
+
+    " Set region to British English
+    set spelllang=en_gb
 endif
 
 " Tab completion stuff
@@ -50,6 +58,12 @@ set wildmode=list:longest,full
 " Autocomplete options
 set completeopt=menu,longest,preview
 set complete=.,w,b,u,U,t,i,d
+
+" Shortcut to rapidly toggle `set list` \l by default
+nmap <leader>l :set list!<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:?\ ,eol:¬
 
 " When I close a tab, remove the buffer
 set nohidden
@@ -65,7 +79,8 @@ set directory=~/.vim/tmp
 
 " Turn error bells off
 set noerrorbells
-set visualbell t_vb=
+set visualbell
+set t_vb=
 
 " Automatically cd into the directory that the file is in
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
